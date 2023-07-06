@@ -6,6 +6,10 @@
 
 # COMMAND ----------
 
+dbutils.library.restartPython()
+
+# COMMAND ----------
+
 # MAGIC %md-sandbox
 # MAGIC # Chat Bot with langchain and Dolly
 # MAGIC

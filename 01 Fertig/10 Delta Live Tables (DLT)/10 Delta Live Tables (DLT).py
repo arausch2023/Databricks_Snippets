@@ -54,6 +54,11 @@
 
 # COMMAND ----------
 
+import dbdemos
+dbdemos.list_demos(category = 'Data-Engineering')
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC
 # MAGIC # dbdemos.install erstellt einen Unterordner "/dlt-cdc/" mit allen Notebooks der Demo
