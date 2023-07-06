@@ -5,7 +5,7 @@
 # MAGIC
 # MAGIC ## Heute schauen wir uns die Erweiterung der Delta Tables an, nämlich Delta **Live** Tables.
 # MAGIC ## Wir gehen eine Demo durch, wo wir  Delta Live Tables verwenden und
-# MAGIC ## in einem Workflow mit Pipelines komplett von Quelle -> Dashboard die Aktualisierung durchführen.
+# MAGIC ## in einem Workflow mit Pipelines komplett von Quelle -> Dashboard die Aktualisierung mit SCD2 durchführen.
 
 # COMMAND ----------
 

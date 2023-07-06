@@ -17,5 +17,11 @@ dbdemos.list_demos()
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC
+# MAGIC # dbdemos.install erstellt einen Unterordner "/sql-ai-functions/" mit allen Notebooks der Demo
+
+# COMMAND ----------
+
 import dbdemos
 dbdemos.install('sql-ai-functions', path='./', overwrite = True)
