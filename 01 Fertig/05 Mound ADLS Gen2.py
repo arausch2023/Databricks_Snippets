@@ -92,3 +92,22 @@ dbutils.fs.unmount('/mnt/deltalake')
 # MAGIC <div style="text-align: left; line-height: 0; padding-top: 9px;">
 # MAGIC   <img src="https://learn.microsoft.com/en-us/azure/databricks/_static/images/secrets/azure-kv-scope.png" alt="Secret Scope" style="width: 600px">
 # MAGIC </div>
+
+# COMMAND ----------
+
+infomotion_csv = spark.read.format("csv") \
+    .option("header", "true") \
+    .option("inferschema", "true") \
+    .load("/dbfs/mnt/deltalake/infomotion.csv")
+
+# COMMAND ----------
+
+f = open('/dbfs/mnt/deltalake/infomotion.csv', 'r')
+print(f.read())
+
+# COMMAND ----------
+
+mysecret = dbutils.secrets.get("openai_key_secret_scope", "openai_key_secret_key")
+
+for i in mysecret:
+    print(i)

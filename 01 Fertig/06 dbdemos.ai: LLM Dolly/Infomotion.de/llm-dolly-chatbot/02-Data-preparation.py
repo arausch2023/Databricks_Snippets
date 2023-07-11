@@ -67,21 +67,8 @@
 # COMMAND ----------
 
 # DBTITLE 1,Extract the dataset using sh command
-# MAGIC %sh
-# MAGIC #To keep it simple, we'll download and extract the dataset using standard bash commands 
-# MAGIC #Install 7zip to extract the file
-# MAGIC apt-get install -y p7zip-full
-# MAGIC
-# MAGIC rm -rf /tmp/gardening || true
-# MAGIC mkdir -p /tmp/gardening
-# MAGIC cd /tmp/gardening
-# MAGIC #Download & extract the gardening archive
-# MAGIC curl -L https://archive.org/download/stackexchange/gaming.stackexchange.com.7z -o gardening.7z
-# MAGIC 7z x gardening.7z 
-# MAGIC #Move the dataset to our main bucket
-# MAGIC rm -rf /dbfs/dbdemos/product/llm/gardening/raw || true
-# MAGIC mkdir -p /dbfs/dbdemos/product/llm/gardening/raw
-# MAGIC cp -f Posts.xml /dbfs/dbdemos/product/llm/gardening/raw
+raw_gardening = spark.read.format("csv").load("dbfs:/mnt/deltalake/infomotion.csv")
+display(raw_gardening)
 
 # COMMAND ----------
 

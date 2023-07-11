@@ -85,6 +85,10 @@
 
 # COMMAND ----------
 
+dbutils.fs.ls('/mnt/deltalake')
+
+# COMMAND ----------
+
 # DBTITLE 1,Our Q&A dataset is ready
 # MAGIC %fs ls /dbdemos/product/llm/gardening/raw
 
@@ -104,14 +108,6 @@
 # MAGIC - Join questions and answers to form question-answer pairs
 # MAGIC
 # MAGIC *Note that this pipeline is basic. For more advanced ingestion examples with Databricks Lakehouse, try Delta Live Tables: `dbdemos.instal('dlt_loan')`*
-
-# COMMAND ----------
-
-# DBTITLE 1,Review our raw Q&A dataset
-gardening_raw_path = demo_path+"/gardening/raw"
-print(f"loading raw xml dataset under {gardening_raw_path}")
-raw_gardening = spark.read.format("xml").option("rowTag", "row").load(f"{gardening_raw_path}/Posts.xml")
-display(raw_gardening)
 
 # COMMAND ----------
 
