@@ -3,6 +3,29 @@
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC
+# MAGIC # OpenAI-Account anlegen auf https://platform.openai.com/
+# MAGIC
+# MAGIC ## API Key erstellen auf der Seite, dann als Secret Scope in Databricks verwenden
+# MAGIC Dazu muss die Databricks CLI genutzt werden, Installations-Dateien: https://github.com/databricks/cli/releases
+# MAGIC Siehe auch: https://www.youtube.com/watch?v=HZ00AznWvKc&t=359s
+# MAGIC ## Befehle:
+# MAGIC D:\Databricks\databricks_cli_0.200.2_windows_amd64\databricks configure
+# MAGIC
+# MAGIC Hier dann die URL von eurem Databricks-Workspace eintragen, Bsp.: "adb-3456974533129641.1.azuredatabricks.net"
+# MAGIC Ihr braucht noch einen Personal Access Token, findet ihr unter User Settings -> Access Tokens
+# MAGIC
+# MAGIC D:\Databricks\databricks_cli_0.200.2_windows_amd64\databricks secrets create-scope openai_key_secret_scope
+# MAGIC
+# MAGIC Hier dann als string-value euren OpenAI API Key hinterlegen
+# MAGIC
+# MAGIC D:\Databricks\databricks_cli_0.200.2_windows_amd64\databricks secrets put-secret openai_key_secret_scope openai_key_secret_key --string-value sk-**Hier euer OpenAI API Key ohne " oder '**
+# MAGIC
+# MAGIC D:\Databricks\databricks_cli_0.200.2_windows_amd64\databricks secrets list-scopes
+
+# COMMAND ----------
+
 # MAGIC %md ##Introduction
 # MAGIC
 # MAGIC The goal of this solution accelerator is to show how we can leverage a large language model in combination with our own data to create an interactive application capable of answering questions specific to a particular domain or subject area.  The core pattern behind this is the delivery of a question along with a document or document fragment that provides relevant context for answering that question to the model.  The model will then respond with an answer that takes into consideration both the question and the context.

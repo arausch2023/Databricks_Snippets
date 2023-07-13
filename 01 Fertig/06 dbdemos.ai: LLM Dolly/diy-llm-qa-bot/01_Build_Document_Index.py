@@ -5,6 +5,7 @@
 
 # MAGIC %md
 # MAGIC
+# MAGIC # Vorarbeiten:
 # MAGIC # OpenAI-Account anlegen auf https://platform.openai.com/
 # MAGIC
 # MAGIC ## API Key erstellen auf der Seite, dann als Secret Scope in Databricks verwenden
@@ -20,7 +21,7 @@
 # MAGIC
 # MAGIC Hier dann als string-value euren OpenAI API Key hinterlegen
 # MAGIC
-# MAGIC D:\Databricks\databricks_cli_0.200.2_windows_amd64\databricks secrets put-secret openai_key_secret_scope openai_key_secret_key --string-value sk-**Hier euer ApenAI API Key ohne " oder '**
+# MAGIC D:\Databricks\databricks_cli_0.200.2_windows_amd64\databricks secrets put-secret openai_key_secret_scope openai_key_secret_key --string-value sk-**Hier euer OpenAI API Key ohne " oder '**
 # MAGIC
 # MAGIC D:\Databricks\databricks_cli_0.200.2_windows_amd64\databricks secrets list-scopes
 
@@ -66,6 +67,15 @@ from langchain.vectorstores.faiss import FAISS
 # MAGIC %md ##Step 1: Load the Raw Data to Table
 # MAGIC
 # MAGIC A snapshot of the three documentation sources is made available at a publicly accessible cloud storage. Our first step is to access the extracted documents. We can load them to a table using a Spark DataReader configured for reading csv.  
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC
+# MAGIC ## Hier euren Pfad zur infomotion.csv angeben, ich habe einen Azure Data Lake Storage Gen2
+# MAGIC ## als Mount in Databricks, ihr könnt aber die CSV auch ins DBFS (Databricks File System)
+# MAGIC ## uploaden.
+# MAGIC ## csv ist im Ordner ./infomotion_csv/infomotion.csv
 
 # COMMAND ----------
 
