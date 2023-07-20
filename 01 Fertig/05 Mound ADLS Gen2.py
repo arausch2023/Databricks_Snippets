@@ -73,25 +73,7 @@ dbutils.fs.unmount('/mnt/deltalake')
 
 # MAGIC %md
 # MAGIC
-# MAGIC # Sichere Variante: Secret Scope für Azure Access key
-# MAGIC
-# MAGIC https://learn.microsoft.com/en-us/azure/databricks/security/secrets/secret-scopes
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC
-# MAGIC URL im Browser öffnen:
-# MAGIC
-# MAGIC https://[databricks-instance]#secrets/createScope
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC
-# MAGIC <div style="text-align: left; line-height: 0; padding-top: 9px;">
-# MAGIC   <img src="https://learn.microsoft.com/en-us/azure/databricks/_static/images/secrets/azure-kv-scope.png" alt="Secret Scope" style="width: 600px">
-# MAGIC </div>
+# MAGIC ## Bsp. Zugriff auf CSV auf ADSL Gen2-Mount
 
 # COMMAND ----------
 
@@ -104,10 +86,3 @@ infomotion_csv = spark.read.format("csv") \
 
 f = open('/dbfs/mnt/deltalake/infomotion.csv', 'r')
 print(f.read())
-
-# COMMAND ----------
-
-mysecret = dbutils.secrets.get("openai_key_secret_scope", "openai_key_secret_key")
-
-for i in mysecret:
-    print(i)
