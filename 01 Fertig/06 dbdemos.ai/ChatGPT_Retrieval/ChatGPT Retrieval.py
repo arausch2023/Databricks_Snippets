@@ -53,10 +53,12 @@
 
 # COMMAND ----------
 
+# DBTITLE 1,Installation der benötigten Python Libraries
 pip install langchain openai chromadb tiktoken unstructured
 
 # COMMAND ----------
 
+# DBTITLE 1,Vector Store DB für die angebundenen Dateien erstellen, Conversational Retrieval Chain mit ChatGPT 3.5 Turbo
 import os
 import sys
 
