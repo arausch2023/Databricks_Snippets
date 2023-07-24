@@ -38,6 +38,21 @@
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC
+# MAGIC # Was ist ChatGPT Retrieval?
+# MAGIC # 
+# MAGIC ## The ChatGPT Retrieval Plugin also allows you to use ChatGPT with a Vector Database 
+# MAGIC ## to give it a long-term memory. The plugin also enables ChatGPT to generate responses 
+# MAGIC ## based on a company or organizations internal documents and data.
+# MAGIC # 
+# MAGIC
+# MAGIC <div style="text-align: left; line-height: 0; padding-top: 9px;">
+# MAGIC   <img src="https://www.antoinebernard.com/content/images/2023/04/main-1.png" alt="ChatGPT_Retrieval" style="width: 600px">
+# MAGIC </div>
+
+# COMMAND ----------
+
 pip install langchain openai chromadb tiktoken unstructured
 
 # COMMAND ----------
