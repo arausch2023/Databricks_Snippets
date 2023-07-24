@@ -1,7 +1,7 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC
-# MAGIC # chatgpt-retrieval
+# MAGIC # Beispiel ChatGPT-Retrieval
 # MAGIC
 # MAGIC ## Github-Repository:
 # MAGIC
@@ -119,39 +119,30 @@ while True:
 # MAGIC
 # MAGIC # ChatGPT: Was macht dieser Python Code?
 # MAGIC
-# MAGIC This Python code is a script for running a Conversational Retrieval Chain powered by the OpenAI GPT-3.5 Turbo model to answer questions based on a given dataset. The code utilizes various modules from the "langchain" library to manage data loading, embeddings, and indexing.
+# MAGIC Dieser Python-Code erstellt einen Dialogsystem, der auf maschinellem Lernen und Informationsabruf basiert. 
+# MAGIC Es verwendet die OpenAI GPT-3.5-turbo Modell und eine Reihe von Bibliotheken, die anscheinend speziell für
+# MAGIC den Bau solcher Systeme erstellt wurden (z. B. langchain, vectorstore, chroma usw.).
 # MAGIC
-# MAGIC Here's a breakdown of the code:
+# MAGIC ## Eine allgemeine Übersicht über den Code:
 # MAGIC
-# MAGIC     Import necessary libraries and modules:
-# MAGIC         os: For environment variables, including setting the OpenAI API key.
-# MAGIC         sys: For system-specific parameters and functions.
-# MAGIC         openai: The OpenAI Python library for interacting with GPT-3.5 Turbo.
-# MAGIC         Various modules from the "langchain" library.
+# MAGIC     Import der notwendigen Bibliotheken und Module: Hier werden verschiedene Bibliotheken importiert, einschließlich openai
+# MAGIC     für den Zugriff auf die OpenAI API und verschiedene Module aus der langchain Bibliothek, die für die Erstellung des Dialogsystems benötigt werden.
 # MAGIC
-# MAGIC     Set the OpenAI API key: The API key is read from a file named constants.py which contains the variable APIKEY.
+# MAGIC     Setzen des OpenAI API-Schlüssels: Der OpenAI API-Schlüssel wird aus einer Konstantendatei geladen und in der Umgebung gesetzt.
 # MAGIC
-# MAGIC     Define a constant PERSIST and set it to False. This flag determines whether to save the model to disk for reuse.
+# MAGIC     Abfrageverarbeitung: Der Code überprüft, ob eine Abfrage als Befehlszeilenargument übergeben wurde. Wenn ja, wird diese Abfrage verwendet. 
+# MAGIC     Wenn nicht, wird der Benutzer später zur Eingabe einer Abfrage aufgefordert.
 # MAGIC
-# MAGIC     Check if there is a command-line argument provided (i.e., sys.argv[1]) and store it in the variable query.
+# MAGIC     Wiederverwendung des Index: Der Code überprüft, ob ein vorhandener Index wiederverwendet werden kann. Wenn ja, wird dieser geladen. 
+# MAGIC     Wenn nicht, wird ein neuer Index erstellt.
 # MAGIC
-# MAGIC     If PERSIST is set to True and the index directory already exists (persist/index), then it loads the vectorstore from the saved directory. Otherwise, 
-# MAGIC     it creates a new vectorstore index from the data in the "data/" directory.
+# MAGIC     Erstellung des Index: Wenn kein bestehender Index wiederverwendet werden kann, wird ein neuer Index erstellt. 
+# MAGIC     Dies geschieht durch Laden von Dokumenten aus einem Verzeichnis (oder aus einer einzelnen Datei) und Erstellung eines Index mithilfe eines VectorstoreIndexCreator.
 # MAGIC
-# MAGIC     Initialize a ConversationalRetrievalChain with an instantiated GPT-3.5 Turbo model (ChatOpenAI) and a retriever based on the index.
+# MAGIC     Erstellung der Gesprächskette: Eine Gesprächskette (ConversationalRetrievalChain) wird erstellt, die das OpenAI-Modell und den erstellten Index verwendet.
 # MAGIC
-# MAGIC     Enter a loop to interactively answer questions:
-# MAGIC         If query is not provided via a command-line argument, it prompts the user for input.
-# MAGIC         If the user enters 'quit', 'q', or 'exit', the script terminates.
-# MAGIC         The input query is passed to the ConversationalRetrievalChain.
-# MAGIC         The answer from the model is printed.
-# MAGIC         The query and the model's answer are added to the chat history.
-# MAGIC         The query variable is reset to None to prompt the user for the next question.
+# MAGIC     Dialogschleife: Schließlich wird eine unendliche Schleife erstellt, in der der Benutzer nach einer Abfrage gefragt wird. 
+# MAGIC     Die Abfrage wird dann durch die Gesprächskette verarbeitet und die Antwort wird ausgegeben. Die Abfrage und die Antwort 
+# MAGIC     werden auch zur Chat-Historie hinzugefügt, die in zukünftigen Abfragen verwendet wird.
 # MAGIC
-# MAGIC Based on your provided example prompt and input, it seems like the code is trying to answer the question 
-# MAGIC "Wie heißt mein Hund?" (What is my dog's name?) and returns "Der Name Ihres Hundes lautet Anja." (The name of your dog is Anja.) 
-# MAGIC The user then enters 'q', which causes the script to exit with the SystemExit exception.
-# MAGIC
-# MAGIC It's worth noting that this code appears to be a snippet of a larger application or script, as some parts are incomplete 
-# MAGIC (e.g., missing imports and constants). Additionally, without knowing the complete "langchain" library and its functionalities, 
-# MAGIC it's challenging to understand the full context and purpose of this script.
+# MAGIC Bitte beachten Sie, dass ich nicht in der Lage bin, Informationen über die spezifischen langchain, chroma und vectorstore Bibliotheken zu liefern, da diese nicht allgemein bekannt oder dokumentiert sind (bis zu meinem Wissensstand, das bis September 2021 geht). Es könnte sich um spezifische Bibliotheken handeln, die für ein bestimmtes Projekt oder eine bestimmte Organisation entwickelt wurden.
