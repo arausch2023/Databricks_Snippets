@@ -54,9 +54,13 @@
 # COMMAND ----------
 
 #See companion notebook
+
 sql_api = SQLStatementAPI(warehouse_name = "dbdemos-shared-endpoint", catalog = catalog, schema = dbName)
 
+ 
+
 df = sql_api.execute_sql("""
+
 SELECT AI_GENERATE_TEXT("Generate a short product review for a red dress. The customer is very happy with the article.",
                         "azure_openai/gpt-35-turbo",
                         "apiKey", SECRET("dbdemos", "azure-openai"),
@@ -64,7 +68,6 @@ SELECT AI_GENERATE_TEXT("Generate a short product review for a red dress. The cu
                         "deploymentName", "dbdemo-gpt35",
                         "resourceName", "dbdemos-open-ai",
                         "apiVersion", "2023-03-15-preview") as product_review""")
-display(df)
 
 # COMMAND ----------
 

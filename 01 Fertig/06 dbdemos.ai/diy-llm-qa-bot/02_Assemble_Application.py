@@ -48,7 +48,7 @@ from langchain import LLMChain
 # COMMAND ----------
 
 # DBTITLE 1,Specify Question
-question = "How to register a model on databricks?"
+question = "Databricks und INFOMOTION??"
 
 # COMMAND ----------
 

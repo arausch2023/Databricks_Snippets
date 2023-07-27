@@ -55,7 +55,13 @@
 
 # COMMAND ----------
 
+# DBTITLE 1,Secret Scope anschauen
 mysecret = dbutils.secrets.get("openai_key_secret_scope", "openai_key_secret_key")
 
-for i == 1 to 5:
+for i in mysecret:
     print(i)
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC SHOW GROUPS

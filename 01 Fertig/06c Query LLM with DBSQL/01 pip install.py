@@ -19,7 +19,7 @@ dbdemos.list_demos()
 
 # MAGIC %md
 # MAGIC
-# MAGIC # dbdemos.install erstellt einen Unterordner "/sql-ai-functions/" mit allen Notebooks der Demo
+# MAGIC ## dbdemos.install erstellt einen Unterordner "/sql-ai-functions/" mit allen Notebooks der Demo
 
 # COMMAND ----------
 
