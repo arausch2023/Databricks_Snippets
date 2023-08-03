@@ -60,8 +60,3 @@ mysecret = dbutils.secrets.get("openai_key_secret_scope", "openai_key_secret_key
 
 for i in mysecret:
     print(i)
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC SHOW GROUPS

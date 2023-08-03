@@ -72,10 +72,10 @@ from langchain.vectorstores.faiss import FAISS
 
 # MAGIC %md
 # MAGIC
-# MAGIC ## Hier euren Pfad zur infomotion.csv angeben, ich habe einen Azure Data Lake Storage Gen2
-# MAGIC ## als Mount in Databricks, ihr könnt aber die CSV auch ins DBFS (Databricks File System)
-# MAGIC ## uploaden.
-# MAGIC ## csv ist im Ordner ./infomotion_csv/infomotion.csv
+# MAGIC ### Hier euren Pfad zur infomotion.csv angeben, ich habe einen Azure Data Lake Storage Gen2
+# MAGIC ### als Mount in Databricks, ihr könnt aber die CSV auch ins DBFS (Databricks File System)
+# MAGIC ### uploaden.
+# MAGIC ### csv ist im Ordner ./infomotion_csv/infomotion.csv
 
 # COMMAND ----------
 
